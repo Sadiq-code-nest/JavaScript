@@ -26,8 +26,13 @@ console.log(Square);
 
 
 
-// const data = {
-//     name: "Sadiq",
-//     Age: 23
-// }
-// console.log(JSON.stringify(data));
+// Iterate with indexing 
+var numbers = [10, 20, 30, 40]; 
+console.log(numbers); 
+
+numbers.forEach(function(x, index, arr) { 
+  arr[index] = x + 5; 
+}); 
+
+console.log(numbers);
+
