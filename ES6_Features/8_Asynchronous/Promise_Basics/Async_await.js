@@ -1,10 +1,10 @@
-
-// Using promise simplify the callback hell problem
+// await-- wait untill end of task
+// use async for await
 console.log('hi');
 
 const taskOne = () => {
     return new Promise((resolve, reject) => {
-        setTimeout(() => resolve('Task1 is completed'), 2000)
+        setTimeout(() => resolve('Task1 is completed'), 1000)
     });
 }
 const taskTwo = () => {
@@ -17,13 +17,25 @@ const taskFour = () => {
     return new Promise((resolve, reject) => resolve('Task4 is completed'));
 }
 
-taskOne()
-    .then(x => console.log(x))
-    .then(taskTwo)
-    .then(x => console.log(x))
-    .then(taskThree)
-    .then(x => console.log(x))
-    .then(taskFour)
-    .then(x => console.log(x))
-    .catch(x => console.log(x))
+
+
+const callAllTask = async () => {
+try {
+    let t1 = await taskOne();
+    console.log(t1);
+    let t2 = await taskTwo();
+    console.log(t2);
+    let t3 = await taskThree();
+    console.log(t3);
+    let t4 = await taskFour();
+    console.log(t4);
+
+} catch (error)
+{
+console.log(error);
+}
+}
+callAllTask();
+
+
 console.log('bye');
