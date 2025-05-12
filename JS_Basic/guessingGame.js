@@ -9,3 +9,5 @@ else
 { 
     console.log(`Sorry You loss ☹️  number was ${randomGenerate}`);
 }
+
+// new Open
